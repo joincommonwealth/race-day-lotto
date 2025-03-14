@@ -1,8 +1,17 @@
 // Constants
-const SYMBOLS = ['🐎', '🏆', '🎯', '⭐', '🌟', '💫'];
+const SYMBOLS = ['🎠', '🏆', '🎯', '⭐', '🌟', '💫'];
 const SPIN_DURATION = 2000; // 2 seconds
 const TOTAL_PASSES = 10;
 const WIN_PROBABILITY = 0.1; // 10% chance to win
+
+// Colors from Commonwealth branding
+const COLORS = {
+    primary: '#2563EB',
+    primaryDark: '#1D4ED8',
+    textColor: '#1F2937',
+    textSecondary: '#4B5563',
+    background: '#F3F4F6'
+};
 
 // DOM Elements
 const spinButton = document.getElementById('spinButton');
@@ -28,12 +37,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (firstName) {
         resultMessage.textContent = `Hey ${firstName}!`;
     }
+
+    // Add initial animations
+    gsap.from('header', {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
+    gsap.from('.lottery-container', {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        delay: 0.3,
+        ease: 'power3.out'
+    });
 });
 
 // Slot Machine Animation
 function animateSlot(slot, duration) {
     const symbols = [...SYMBOLS];
     let currentIndex = 0;
+    
+    // Add glow effect
+    gsap.to(slot.parentElement, {
+        boxShadow: '0 0 15px rgba(37, 99, 235, 0.5)',
+        duration: 0.5
+    });
     
     const interval = setInterval(() => {
         slot.textContent = symbols[currentIndex];
@@ -43,6 +74,11 @@ function animateSlot(slot, duration) {
     return new Promise(resolve => {
         setTimeout(() => {
             clearInterval(interval);
+            // Remove glow effect
+            gsap.to(slot.parentElement, {
+                boxShadow: 'none',
+                duration: 0.5
+            });
             resolve();
         }, duration);
     });
@@ -66,15 +102,42 @@ function updateWinnerDetails() {
 // Show Result
 function showResult(isWinner) {
     resultContainer.classList.remove('hidden');
+    
+    // Animate result container
+    gsap.from(resultContainer, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
     resultTitle.textContent = isWinner ? '🎉 Congratulations! 🎉' : 'Better Luck Next Time!';
     
     if (isWinner) {
         winnerDetails.classList.remove('hidden');
         consolationOffer.classList.add('hidden');
         updateWinnerDetails();
+        
+        // Animate winner details
+        gsap.from('#winnerDetails', {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.5,
+            delay: 0.5,
+            ease: 'back.out'
+        });
     } else {
         winnerDetails.classList.add('hidden');
         consolationOffer.classList.remove('hidden');
+        
+        // Animate consolation offer
+        gsap.from('#consolationOffer', {
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.5,
+            delay: 0.5,
+            ease: 'back.out'
+        });
     }
 }
 
@@ -84,6 +147,14 @@ async function handleSpin() {
     
     isSpinning = true;
     spinButton.disabled = true;
+
+    // Add button press animation
+    gsap.to(spinButton, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1
+    });
 
     // Animate slots sequentially
     for (let i = 0; i < slots.length; i++) {
@@ -103,6 +174,14 @@ spinButton.addEventListener('click', handleSpin);
 
 // Download Pass Handler
 document.getElementById('downloadPass').addEventListener('click', () => {
-    // Here you would typically generate and download a PDF pass
-    alert('Your paddock pass will be downloaded shortly!');
+    // Add button press animation
+    gsap.to('#downloadPass', {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1,
+        onComplete: () => {
+            alert('Your paddock pass will be downloaded shortly!');
+        }
+    });
 }); 

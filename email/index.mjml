@@ -1,18 +1,16 @@
 <mjml>
   <mj-head>
     <mj-title>Race Day Lotto - Win Exclusive Paddock Passes!</mj-title>
-    <mj-font name="Playfair Display" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" />
-    <mj-font name="Open Sans" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" />
     <mj-attributes>
-      <mj-all font-family="Open Sans, Arial, sans-serif" />
-      <mj-text font-size="16px" color="#333333" line-height="24px" />
+      <mj-all font-family="Helvetica, Arial, sans-serif" />
+      <mj-text font-size="16px" color="#1F2937" line-height="24px" />
     </mj-attributes>
     <mj-style>
       .button-primary {
-        background: #C5A572;
+        background: #2563EB;
         border-radius: 4px;
         color: #ffffff;
-        font-family: Open Sans, Arial, sans-serif;
+        font-family: Helvetica, Arial, sans-serif;
         font-size: 18px;
         font-weight: 600;
         text-decoration: none;
@@ -22,17 +20,17 @@
         transition: all 0.3s ease;
       }
       .button-primary:hover {
-        background: #B3945F;
+        background: #1D4ED8;
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       }
     </mj-style>
   </mj-head>
-  <mj-body background-color="#f4f4f4">
+  <mj-body background-color="#F3F4F6">
     <!-- Header Section -->
     <mj-section background-color="#ffffff" padding="20px 0">
       <mj-column>
-        <mj-image src="[Company Logo URL]" alt="Company Logo" width="200px" align="center" />
+        <mj-image src="[Company Logo URL]" alt="Commonwealth Logo" width="200px" align="center" />
       </mj-column>
     </mj-section>
 
@@ -46,16 +44,16 @@
     <!-- Main Content -->
     <mj-section background-color="#ffffff" padding="40px 30px">
       <mj-column>
-        <mj-text font-size="32px" color="#1A472A" align="center" font-family="Playfair Display, Georgia, serif">
+        <mj-text font-size="32px" color="#1F2937" align="center" font-family="Helvetica, Arial, sans-serif" font-weight="bold">
           Race Day Lotto
         </mj-text>
-        <mj-text font-size="20px" color="#333333" align="center" padding="20px 0">
+        <mj-text font-size="20px" color="#4B5563" align="center" padding="20px 0">
           Hey {{customer.first_name}}, Ready to Win?
         </mj-text>
-        <mj-text font-size="18px" color="#666666" align="center" padding="0 0 30px 0">
+        <mj-text font-size="18px" color="#6B7280" align="center" padding="0 0 30px 0">
           Only 10 Exclusive Paddock Passes Available!
         </mj-text>
-        <mj-button href="{{action_url}}?utm_source=email&utm_campaign=race_day_lotto" 
+        <mj-button href="https://race-day-lotto.vercel.app/?utm_source=email&utm_campaign=race_day_lotto&name={{customer.first_name}}&email={{customer.email}}" 
                    css-class="button-primary" 
                    padding="20px 0">
           Spin the Reins to Win!
@@ -64,13 +62,13 @@
     </mj-section>
 
     <!-- Footer -->
-    <mj-section background-color="#1A472A" padding="30px">
+    <mj-section background-color="#1F2937" padding="30px">
       <mj-column>
-        <mj-text color="#ffffff" align="center" font-size="14px">
+        <mj-text color="#F3F4F6" align="center" font-size="14px">
           Terms and Conditions apply. Must be 18 or older to participate.
         </mj-text>
-        <mj-text color="#ffffff" align="center" font-size="14px" padding="10px 0">
-          To unsubscribe, <a href="{{unsubscribe_url}}" style="color: #C5A572;">click here</a>
+        <mj-text color="#F3F4F6" align="center" font-size="14px" padding="10px 0">
+          To unsubscribe, <a href="{{unsubscribe_url}}" style="color: #60A5FA;">click here</a>
         </mj-text>
       </mj-column>
     </mj-section>
