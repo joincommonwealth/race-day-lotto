@@ -1,0 +1,78 @@
+<mjml>
+  <mj-head>
+    <mj-title>Race Day Lotto - Win Exclusive Paddock Passes!</mj-title>
+    <mj-font name="Playfair Display" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" />
+    <mj-font name="Open Sans" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Open Sans, Arial, sans-serif" />
+      <mj-text font-size="16px" color="#333333" line-height="24px" />
+    </mj-attributes>
+    <mj-style>
+      .button-primary {
+        background: #C5A572;
+        border-radius: 4px;
+        color: #ffffff;
+        font-family: Open Sans, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      .button-primary:hover {
+        background: #B3945F;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f4f4f4">
+    <!-- Header Section -->
+    <mj-section background-color="#ffffff" padding="20px 0">
+      <mj-column>
+        <mj-image src="[Company Logo URL]" alt="Company Logo" width="200px" align="center" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Hero Section -->
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column>
+        <mj-image src="[Hero Image URL]" alt="Horse in saddling paddock" width="600px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section background-color="#ffffff" padding="40px 30px">
+      <mj-column>
+        <mj-text font-size="32px" color="#1A472A" align="center" font-family="Playfair Display, Georgia, serif">
+          Race Day Lotto
+        </mj-text>
+        <mj-text font-size="20px" color="#333333" align="center" padding="20px 0">
+          Hey {{customer.first_name}}, Ready to Win?
+        </mj-text>
+        <mj-text font-size="18px" color="#666666" align="center" padding="0 0 30px 0">
+          Only 10 Exclusive Paddock Passes Available!
+        </mj-text>
+        <mj-button href="{{action_url}}?utm_source=email&utm_campaign=race_day_lotto" 
+                   css-class="button-primary" 
+                   padding="20px 0">
+          Spin the Reins to Win!
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#1A472A" padding="30px">
+      <mj-column>
+        <mj-text color="#ffffff" align="center" font-size="14px">
+          Terms and Conditions apply. Must be 18 or older to participate.
+        </mj-text>
+        <mj-text color="#ffffff" align="center" font-size="14px" padding="10px 0">
+          To unsubscribe, <a href="{{unsubscribe_url}}" style="color: #C5A572;">click here</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml> 

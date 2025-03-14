@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Day Lotto - Your Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Race Day Lotto</h1>
+            <p class="subtitle">Your Exclusive Paddock Pass Results</p>
+        </header>
+
+        <main>
+            <div class="lottery-container">
+                <div class="slot-machine">
+                    <div class="slot" id="slot1">
+                        <div class="slot-content"></div>
+                    </div>
+                    <div class="slot" id="slot2">
+                        <div class="slot-content"></div>
+                    </div>
+                    <div class="slot" id="slot3">
+                        <div class="slot-content"></div>
+                    </div>
+                </div>
+                <button id="spinButton" class="spin-button">Spin the Reins!</button>
+            </div>
+
+            <div id="result" class="result-container hidden">
+                <div class="result-content">
+                    <h2 id="resultTitle"></h2>
+                    <p id="resultMessage"></p>
+                    <div id="winnerDetails" class="hidden">
+                        <h3>Your Paddock Pass Details</h3>
+                        <div class="pass-details">
+                            <p>Date: <span id="passDate"></span></p>
+                            <p>Location: <span id="passLocation"></span></p>
+                            <p>Time: <span id="passTime"></span></p>
+                        </div>
+                        <button id="downloadPass" class="download-button">Download Your Pass</button>
+                    </div>
+                    <div id="consolationOffer" class="hidden">
+                        <h3>Don't Miss Out!</h3>
+                        <p>While you didn't win this time, you can still experience the thrill of race day!</p>
+                        <a href="#" class="shop-button">Shop Race Day Gear</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Terms and Conditions apply. Must be 18 or older to participate.</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
