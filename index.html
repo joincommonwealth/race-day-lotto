@@ -11,23 +11,16 @@
         <header>
             <img src="[Company Logo URL]" alt="Commonwealth Logo" style="max-width: 200px; margin-bottom: 2rem;">
             <h1>Race Day Lotto</h1>
-            <p class="subtitle">Your Exclusive Paddock Pass Results</p>
+            <p class="subtitle">Scratch to Reveal Your Prize!</p>
         </header>
 
         <main>
             <div class="lottery-container">
-                <div class="slot-machine">
-                    <div class="slot" id="slot1">
-                        <div class="slot-content"></div>
-                    </div>
-                    <div class="slot" id="slot2">
-                        <div class="slot-content"></div>
-                    </div>
-                    <div class="slot" id="slot3">
-                        <div class="slot-content"></div>
-                    </div>
+                <div class="scratch-card-wrapper">
+                    <canvas id="scratchCard" width="300" height="300"></canvas>
+                    <div id="prizeContent" class="prize-content"></div>
                 </div>
-                <button id="spinButton" class="spin-button">Spin the Reins!</button>
+                <p class="instructions">Click and drag to scratch!</p>
             </div>
 
             <div id="result" class="result-container hidden">
